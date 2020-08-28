@@ -2,6 +2,8 @@ import { BLOCKS } from '@contentful/rich-text-types';
 import { BoldPlugin } from './Bold';
 import { ItalicPlugin } from './Italic';
 import { UnderlinedPlugin } from './Underlined';
+import { SuperscriptPlugin } from './Superscript';
+import { SubscriptPlugin } from './Subscript';
 import { CodePlugin } from './Code';
 import { QuotePlugin } from './Quote';
 import { HyperlinkPlugin } from './Hyperlink';
@@ -11,7 +13,7 @@ import {
   Heading3Plugin,
   Heading4Plugin,
   Heading5Plugin,
-  Heading6Plugin
+  Heading6Plugin,
 } from './Heading';
 
 import NewLinePlugin from './NewLinePlugin';
@@ -40,6 +42,8 @@ export function buildPlugins(richTextAPI) {
     BoldPlugin({ richTextAPI }),
     ItalicPlugin({ richTextAPI }),
     UnderlinedPlugin({ richTextAPI }),
+    SuperscriptPlugin({ richTextAPI }),
+    SubscriptPlugin({ richTextAPI }),
     CodePlugin({ richTextAPI }),
     QuotePlugin({ richTextAPI }),
     HyperlinkPlugin({ richTextAPI }),
@@ -60,6 +64,6 @@ export function buildPlugins(richTextAPI) {
     PasteTextPlugin(),
     CommandPalettePlugin({ richTextAPI }),
     TrailingBlock({ type: BLOCKS.PARAGRAPH }),
-    NewLinePlugin()
+    NewLinePlugin(),
   ];
 }
